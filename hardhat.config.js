@@ -29,7 +29,8 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      bscTestnet: 'WHI1P19FSH31QTTFZFQRBA2J49UDQ9RDKE'
+      bscTestnet: 'WHI1P19FSH31QTTFZFQRBA2J49UDQ9RDKE',
+      rinkeby: 'DNG8A4GWAVP2S4RQT23GI8AQS97YS3NN2X'
     }
   }
 };
