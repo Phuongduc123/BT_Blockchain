@@ -11,11 +11,11 @@ contract CollectionERC721 is ERC721URIStorage {
 
   constructor(string memory name, string memory symbol) ERC721(name, symbol) {}
 
-  function mint(string memory _tokenURI) public returns (uint256) {
+  function mint(string memory _tokenURI, address _address) public returns (uint256) {
     _tokenIds.increment();
 
     uint256 newItemId = _tokenIds.current();
-    _mint(msg.sender, newItemId);
+    _mint(_address, newItemId);
     _setTokenURI(newItemId, _tokenURI);
 
     return newItemId;

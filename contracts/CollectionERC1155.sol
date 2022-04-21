@@ -24,10 +24,10 @@ contract CollectionERC1155 is ERC1155 {
     }
 
 
-  function mint(string memory _tokenURI,uint256 amount) public returns (uint256) {
+  function mint(string memory _tokenURI,address _address,uint256 amount) public returns (uint256) {
     _tokenIds.increment();
     uint256 newItemId = _tokenIds.current();
-    _mint(msg.sender, newItemId, amount, "");
+    _mint(_address, newItemId, amount, "");
     _setURI(newItemId, _tokenURI);
 
     return newItemId;
