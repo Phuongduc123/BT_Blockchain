@@ -2,7 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   const MyToken = await hre.ethers.getContractFactory("MyToken");
-  const myToken = await MyToken.deploy("A", "B");
+  const myToken = await MyToken.deploy("ABC", "ABC");
 
   await myToken.deployed();
 
