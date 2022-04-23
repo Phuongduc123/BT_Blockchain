@@ -16,7 +16,18 @@ contract CollectionERC721 is ERC721URIStorage {
     owner = msg.sender;
   }
 
+  function setAdminList(address _admin) public {
+    require(msg.sender == owner, "CollectionERC721: only owner can do it");
+    adminMapping[_admin] = true;
+  }
+
+  function setBlackList(address _blackAdmin) public {
+    require(msg.sender == owner, "CollectionERC721: only owner can do it");
+    blackMapping[_blackAdmin] = true;
+  }
+
   function mint(string memory _tokenURI, address _address) public returns (uint256) {
+    require(adminMapping[msg.sender] == true && blackMapping[msg.sender] != true, "you don't have permission to mint");
     _tokenIds.increment();
     uint256 newItemId = _tokenIds.current();
     _mint(_address, newItemId);

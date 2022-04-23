@@ -3,8 +3,9 @@ const hre = require("hardhat");
 async function main() {
   [address0] = await ethers.getSigners();
   const CollectionERC721 = await hre.ethers.getContractFactory("CollectionERC721");
-  const collectionERC721 = await CollectionERC721.deploy("COLLECTION PHUONG", "PHUONG");
+  const collectionERC721 = await CollectionERC721.deploy("COLLECTION NFT WITH OWNER", "NFTT");
 
+  console.log("phuong8", address0)
   await collectionERC721.deployed();
   collectionERC721.connect(address0).mint("https://ipfs.io/ipfs/QmWYqaxNntK9qU1k5wWYoqMiFV62aEyJEXWS3Bcpo2ohTq");
 
