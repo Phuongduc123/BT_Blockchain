@@ -15,13 +15,12 @@ contract CollectionERC1155 is ERC1155 {
   constructor(string memory _uri) ERC1155(_uri) {}
 
   function uri(uint256 tokenId) public view virtual override returns (string memory) {
-        return _tokenURIs[tokenId];
-    }
+    return _tokenURIs[tokenId];
+  }
 
   function _setURI(uint256 tokenId, string memory tokenURI) internal virtual {
-        _tokenURIs[tokenId] = tokenURI;
-        emit URI(uri(tokenId), tokenId);
-    }
+    _tokenURIs[tokenId] = tokenURI;
+  }
 
 
   function mint(string memory _tokenURI,address _address,uint256 amount) public returns (uint256) {

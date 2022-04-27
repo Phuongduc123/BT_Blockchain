@@ -8,13 +8,8 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract CollectionERC721 is ERC721URIStorage {
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
-  address owner;
-  mapping(address => bool) adminMapping;
-  mapping(address => bool) blackMapping;
 
-  constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
-    owner = msg.sender;
-  }
+  constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {}
 
   function mint(string memory _tokenURI, address _address) public returns (uint256) {
     _tokenIds.increment();
