@@ -29,6 +29,10 @@ contract AirdropNFT {
       owner = msg.sender;
     }
 
+    function blockNumber() external view returns(uint256){
+        return block.number;
+    } 
+
     function setAdminList(address _admin) public {
       require(msg.sender == owner, "CollectionERC721: only owner can do it");
       _adminMapping[_admin] = true;
