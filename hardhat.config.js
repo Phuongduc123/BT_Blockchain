@@ -25,12 +25,17 @@ module.exports = {
     mainnet: {
       url: `https://mainnet.infura.io/v3/${PROJECT_ID}`,
       accounts: [`0x${PRIVATE_KEY}`]
+    },
+    aurora: {
+      url: `https://testnet.aurora.dev`,
+      accounts: [`0x${PRIVATE_KEY}`]
     }
   },
   etherscan: {
     apiKey: {
       bscTestnet: 'WHI1P19FSH31QTTFZFQRBA2J49UDQ9RDKE',
-      rinkeby: 'DNG8A4GWAVP2S4RQT23GI8AQS97YS3NN2X'
+      rinkeby: 'DNG8A4GWAVP2S4RQT23GI8AQS97YS3NN2X',
+      aurora: 'DNG8A4GWAVP2S4RQT23GI8AQS97YS3NN2X'
     }
   }
 };

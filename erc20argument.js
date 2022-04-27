@@ -1,3 +1,3 @@
 module.exports = [
-  "USDC", "USDC"
+  "WNEAR", "WNEAR"
 ]
